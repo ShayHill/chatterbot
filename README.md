@@ -25,6 +25,10 @@ To pick one example, the word "the" is followed twice in the training text by "c
 
 To improve this just a bit, I added a "begin sentence" and "end sentence" tokens to the text. This will allow the AI to pick sensible words to start a sentence and for the sentence to eventually end.
 
+After creating the Markov chain, start with the "begin sentence" token, then use weighted random selection to pick a word to follow it. Then pick a word to follow that word, and so on, until you reach the "end sentence" token.
+
+For instance, when at the word "the", the AI will pick "cat" 2/5 of the time, "bird" 1/5 of the time, "dog" 1/5 of the time, and "end" 1/5 of the time.
+
 ## These are the kinds of sentences you can expect after training this with your favorite book:
 
 * but I take him for a marshall's baton
